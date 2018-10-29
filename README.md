@@ -11,17 +11,17 @@ AI Cordinator using AI(Clarifai) for Capston Design Contest
 
 * 작동 순서: py_camera -> AWS_S3(save) -> lamba -> ec2 -> rdms -> web     
                    
-#### server(kdpark)   
+### Server(kdpark)   
 Tech : AWS(lambda, IOT, ec2, rdms, S3), Nginx, Flask    
 OS: Linux Ubuntu        
 Language : C, Python           
              
-#### hardware(kdpark)              
+### Hardware(kdpark)              
 Tech : NFC(using scard), raspberry_pi                  
 OS: rasbian                 
 Language : C, python                  
                   
-#### cloth detect(kdpark)                 
+### Cloth detect(kdpark)                 
 : Claifai API 사용                            
 
 
