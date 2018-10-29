@@ -25,7 +25,7 @@ myMQTTClient = AWSIoTMQTTClient("capstonpi")
 myMQTTClient.configureEndpoint("a1118c5lm8uox.iot.ap-northeast-2.amazonaws.com", 8883)
 # For Websocket
 # myMQTTClient.configureEndpoint("YOUR.ENDPOINT", 443)
-myMQTTClient.configureCredentials("./cert/rootCA.pem", "./cert/792b618897-private.pem.key", "./cert/792b618897-certificate.pem.crt")
+myMQTTClient.configureCredentials("./cert/rootCA.pem", "private.pem.key", "certificate.pem.crt")
 # For Websocket, we only need to configure the root CA
 # myMQTTClient.configureCredentials("YOUR/ROOT/CA/PATH")
 myMQTTClient.configureOfflinePublishQueueing(-1)  # Infinite offline Publish queueing
