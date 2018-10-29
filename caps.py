@@ -1,17 +1,17 @@
 from clarifai.rest import ClarifaiApp, Concept
-app = ClarifaiApp(api_key='c08119ac794342adb99c966bcc0bb4fc')
+app = ClarifaiApp(api_key='')
 
 model = app.models.get('capston')
 
-select_concept_list = [Concept(concept_name='train'), Concept(concept_id='ai_6kTjGfF6')]
-model.predict_by_url(url='https://samples.clarifai.com/metro-north.jpg', select_concepts=select_concept_list)
+select_concept_list = [Concept(concept_name='train'), Concept(concept_id='')]
+model.predict_by_url(url='', select_concepts=select_concept_list)
 
 import boto3
 import json
 from botocore.vendored import requests
 from clarifai.rest import ClarifaiApp
 s3_client = boto3.client('s3')
-app = ClarifaiApp(api_key='c08119ac794342adb99c966bcc0bb4fc')
+app = ClarifaiApp(api_key='')
 
 def get_relevant_tags(image_url):
     response_data = app.tag_urls([image_url])
@@ -31,9 +31,9 @@ import sys
 
 REGION = 'us-east-1'
 
-rds_host  = "appychip.c7hugt6dv8dv.ap-south-1.rds.amazonaws.com"
+rds_host  = ".ap-south-1.rds.amazonaws.com"
 name = "appychip"
-password = "appychippassword"
+password = "password"
 db_name = "appychip"
 
 def save_events(event):
