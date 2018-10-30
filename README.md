@@ -28,5 +28,5 @@ Language : C, python
 Tech : pi_camera, raspberry_pi
 OS : rasbian
 Language : python
-
+Con.py need to config3.yml
 
