@@ -26,7 +26,7 @@ Language : C, python
 
 ### Hardware(Tuna_HG)
 Tech : pi_camera, raspberry_pi
-OS : rasbian
+OS : rasbian\n
 Language : python
 
 
