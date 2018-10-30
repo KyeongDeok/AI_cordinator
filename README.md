@@ -25,8 +25,8 @@ Language : C, python
 : Claifai API 사용                            
 
 ### Hardware(Tuna_HG)
-Tech : pi_camera, raspberry_pi
-OS : rasbian
-Language : python
+Tech : pi_camera, raspberry_pi  
+OS : rasbian  
+Language : python  
 Con.py need to config3.yml
 
