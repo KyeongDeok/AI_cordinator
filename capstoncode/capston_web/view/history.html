@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>내 옷장</title>
+</head>
+
+<body id="page-top">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#header"><b>마코디</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/home/index">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/home/information">개인정보</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+
+<section class="container" id="myclothset">
+    <h2>내 옷장</h2>
+    <div class="row">
+      <div class="col-lg-12 mx-auto">
+        <% @realtestsall.each do |r| %>
+          <div class = "myClothPic">
+            <img class = "history_pic" src= "<%= r.img_url %>" alt = "옷">
+            <p class = "title"><%= r.cla_data.split(',')[0] %> /
+                <%= r.cla_data.split(',')[1] %>
+                <a href="/home/destroy?id=<%= r.id%>"> [삭제]  </a>
+            </p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+</section>
+
+</body>

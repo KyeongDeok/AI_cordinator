@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="kr">
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#header"><b>마코디</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/home/index">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/home/information">개인정보</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#servicestoday">오늘 입은 옷 </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#about">내 옷장</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#services">코디 추천</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contact">자주 입은 옷</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!--메인 페이지 설명-->
+<header class="bg-primary text-white">
+  <div class="container text-center">
+    <h1>마코디</h1>
+    <p>내 옷장을 웹에서 파악해보세요</p>
+    <p>마코디를 통해 옷장을 효율적으로 관리할 수 있습니다.</p>
+  </div>
+</header>
+
+
+<!-------------------오늘 입은 옷 ---------------->
+<section id="servicestoday" class="bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <h2>오늘 입은 옷</h2>
+        <% @s3s_last1.each do |i| %>
+          <img class = "todayCloth" src= "<%= i.img_url %>" alt = "옷 사진">
+        <% end %>
+      </div>
+
+      <div class="col-lg-6">
+        <h2>추천 코디</h2>
+        <% @show_pants.each do |i| %>
+          <img class = "todayCloth" src= "<%= i.pants %>" alt = "옷 사진">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+<!---->
+<!-------------------------내 옷장------------------------------------>
+
+<section id="about">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-16 mx-auto">
+        <h2>내 옷장</h2>
+        <% @s3s_last4.each do |i| %>
+          <!--s3s디비에 있는 옷 중 마지막 항목 4개 정보 불러오기-->
+          <div class = "myClothPic">
+            <img class = "myclothset" src= "<%= i.img_url %>" alt = "옷">
+            <!--옷 정보 보여주기(",")로 구분된 옷 정보를 array 형태로 만들고,
+            array를 하나씩 반복해서 돌린 다음, 만약 옷 정보의 확률(.val)이 70%를 넘을 시 기록-->
+            <% for count in 0..((i.cla_data.split(',').length)) %>
+              <% if i.val.split(',')[count].to_f > 0.55 %>
+                <p class = "title"><%= i.cla_data.split(',')[count]%></p>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<div class="container">
+  <a class="btn btn-primary" href="/home/history" role="button">내 옷장 보러가기</a>
+</div>
+
+<section id="services" class="bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-16 mx-auto">
+        <h2>마코디의 Today's pick</h2>
+        <% @todayspick.each do |i| %>
+          <img class = "todayCloth" src= "<%= i.img_url %>" alt = "옷 사진">
+          <p class = "recommand"><%= i.cla_data.split(',')[0] %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h4>내가 가진 옷에 어울리는 코디!</h4>
+    <div class = "row">
+      <div class="col-lg-4">
+        <a href = "<%=@link_random_num1 %>" target = "_blank"><img class = "shoppingmall" src = "<%= @shoppingmall_num1 %>"> </a>
+      </div>
+      <div class="col-lg-4">
+        <a href = "<%=@link_random_num2 %>" target = "_blank"><img class = "shoppingmall" src = "<%= @shoppingmall_num2 %>" > </a>
+      </div>
+      <div class="col-lg-4">
+        <a href = "<%=@link_random_num3 %>" target = "_blank"><img class = "shoppingmall" src = "<%= @shoppingmall_num3 %>" > </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!------------------자주입는옷보러가기------------------------------->
+<section id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-16 mx-auto">
+        <h2>자주입는 옷 best</h2>
+        <!--배열 생성 및 정렬 nfc의 카운트 횟수 담아주는 array 생성, 카운트 칼럼의 count 순서를 역순으로 정렬-->
+        <!--옷 뽑아내서 카운트랑 맞추기... s3와 연결되어 있는 countt를 돌려서 nfc의 카운트 높은 놈과 맞춘다-->
+        <!--% @count_join_s3s.each do |a| %> -->
+        <% @count_join_s3s.each do |a| %>
+          <div class = "myClothPic" >
+            <!--사진 array 순서 고치기 해야 돼!!-->
+            <img class = "usuallycloth" src = "<%= a.img_url %>" alt = "사진">
+            <!--<img class = "usuallycloth" src = "%= a.img_url %>" alt = "사진">-->
+            <!--<p class = "title">%= @dictionary[a.img_url] %>회</p>-->
+            <p class = "title"><%= @array[@count] %>회</p>
+          </div>
+          <% @count += 1 %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="py-5 bg-dark">
+  <div class="container">
+    <p class="m-0 text-center text-white" href="#page-top">TEAM SWAGGO, 마코디</p>
+    <p class="m-0 text-center text-white" href="#page-top">2018 1학기 캡스톤디자인</p>
+  </div>
+</footer>
+
+</body>
+</html>

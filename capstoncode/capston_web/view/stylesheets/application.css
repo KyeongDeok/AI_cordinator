@@ -1,0 +1,192 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+    @media (min-width: 992px) {}
+
+  .back{
+  margin-top:10px;
+  vertical-align: center;
+       /*background:#1AAB8A;*/
+  color:#fff;
+  border:none;
+  position:relative;
+  height:60px;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+  }
+
+  /*form :hover{*/
+  /*background:#fff;*/
+  /*color:#1AAB8A;*/
+  /*}*/
+
+  /*form :after{*/
+  /*right:inherit;*/
+  /*top:inherit;*/
+  /*left:0;*/
+  /*bottom:0;*/
+  /*}*/
+
+  /*form :hover:before,.back:hover:after{*/
+  /*width:100%;*/
+  /*transition:800ms ease all;*/
+  /*}*/
+
+  .navbar-default{
+  height: 10px;
+  }
+
+  header {
+  padding: 100px 0 100px;
+  }
+
+  section {
+  padding: 150px 0;
+  }
+
+  #about{
+  background:white;
+  }
+
+  #services{
+  background:#f8f9fa!important;
+  }
+
+  footer{
+  background: #343a40!important
+  }
+
+  footer p{
+  color:white;
+  }
+  /*************여기까지가 그냥 갖다붙인 css ***************/
+
+
+
+
+/*자주입는 옷 보러가기의 <div> line 148*/
+/*내 옷장의 <div> line 78 */
+/*history.html <div>*/
+  .myClothPic{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  width: 25%;
+  height: 260px;
+  float: left;
+  padding: 10px;
+  margin-top:10px;
+  }
+
+/*오늘 입은 옷 항목의 <img> line 62 */
+/*코디 추천기능 항목의 <img>도 같은 태그를 사용 line 107*/
+  .todayCloth{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  width: 50%;
+  height: auto;
+  }
+
+/*쇼핑몰 추천 기능 <img> */
+  .shoppingmall{
+  /*float: left;*/
+  width: 200px;
+  height: 200px;
+  /*display: block;*/
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+/*자주입는 옷 best <img> */
+  .usuallycloth{
+  width: 100%;
+  height: 100%;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  }
+/*내 옷장<img>*/
+  .myclothset{
+  width: 100%;
+  height: 100%;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  }
+/*history에 있는 <img> */
+ .history_pic{
+  width: 100%;
+  height: 100%;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  }
+
+
+/**** .recommand랑 .title의 용도는 같습니다.
+다만, recommand는 중앙에 정렬된 사진을 설명하는 p태그,
+title은 사진 4개가 가운데 정렬된 사진을 설명하는 p태그  *******/
+
+/*마코디 today's pick의 <p> line 107*/
+  .recommand{
+  text-align:center;
+  background:gray;
+  color:white;
+  height: 10%;
+  width:40%;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+/*내 옷장에 <p> line 84*/
+/*자주 입는 옷 best <p> line 141*/
+/*history.html <p>*/
+  .title{
+  text-align:center;
+  background:gray;
+  color:white;
+  height: 10%;
+  }
+
+
+ 
+
+
+
+
+ /*히스토리.html <section>*/
+  #myclothset{
+  padding-top: 0%;
+  }
+
+      /*오늘 손댄 css 0612*/
+
+  /*a{   */
+  /*text-align:center;*/
+  /*}*/
+
+
+  /*.bestClothPic{*/
+  /*display:block;*/
+  /*margin-left:auto;*/
+  /*margin-right:auto;*/
+  /*width: 20%;*/
+  /*float: left;*/
+  /*}*/
