@@ -20,9 +20,6 @@ Language : C, Python
 Tech : NFC(using scard), raspberry_pi                  
 OS: rasbian                 
 Language : C, python                  
-                  
-### Cloth detect(kdpark)                 
-: Claifai API 사용                            
 
 ### Hardware(Tuna_HG)
 Tech : pi_camera, raspberry_pi  
@@ -30,3 +27,9 @@ OS : rasbian
 Language : python  
 Con.py need to config3.yml
 
+### Cloth detect(kdpark)                 
+: Claifai API 사용                            
+
+### Web Front End(Nam_ju kim)      
+Langauge: Ruby, HTML, CSS
+App server: Rails
