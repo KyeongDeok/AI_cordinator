@@ -1,7 +1,7 @@
 # AI_cordinator
 AI Cordinator using AI(Clarifai) for Capston Design Contest
 
-## 한양대학교 에리카 캠퍼스 캡스톤 디자인     
+## 한양대학교 에리카 캠퍼스 캡스톤 디자인(대상)     
 #### 인공지능을 사용한 스마트 옷장    
                   
 <hr/>
